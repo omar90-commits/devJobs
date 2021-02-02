@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<title>{{nombrePagina}}</title>
+</head>
+<body>
+	
+
+	<div class="nombre-sitio contenedor">
+		<h1>
+			<a href="/">devJobs</a>
+		</h1>
+	</div>
+
+	<header class="site-header contenedor separador">
+		<h2>{{nombrePagina}}</h2>
+
+		<p class="tagline">{{tagline}}</p>
+	</header>
+
+	<main class="contenedor">
+		<form action="/iniciar-sesion" method="POST" class="default-form">
+			<div class="campo">
+				<label>E-mail</label>
+				<input type="email" name="email" placeholder="Tu email" required>
+			</div>
+
+			<div class="campo">
+				<label>Password</label>
+				<input type="password" name="password" placeholder="Tu password" required />
+			</div>
+
+			<div class="campo acciones">
+				<a href="/crear-cuenta">Crear una cuenta</a>
+				<a href="/restablecer-password">Olvide mi password</a>
+			</div>
+
+			<div class="campo">
+				<input type="submit" value="Iniciar sesion" class="btn btn-azul" />
+			</div>
+		</form>
+	</main>
+
+	{{#if mensajes}}
+		<div class="alertas">
+			{{#mostrarAlertas mensajes}}
+			{{/mostrarAlertas}}
+		</div>
+	{{/if}}
+	
+	<script type="text/javascript" src="/dist/bundle.js"></script>
+</body>
+</html>

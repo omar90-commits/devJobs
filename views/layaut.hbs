@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<title>{{nombrePagina}}</title>
+</head>
+<body>
+	
+	<div class="nombre-sitio contenedor">
+		<h1>
+			<a href="/">devJobs</a>
+		</h1>
+
+		<div class="buscador">
+			<form action="/buscador" method="POST">
+				<input type="text" name="q" class="buscar">
+				<input type="submit" value="buscar">
+			</form>
+		</div>
+	</div>
+
+	<header class="site-header contenedor separador">
+		<h2>{{nombrePagina}}</h2>
+
+		{{#if tagline}}
+			<p class="tagline">{{tagline}}</p>
+		{{/if}}
+
+		{{#if boton}}
+			<a href="/vacantes/nueva" class="btn btn-azul">Publicar Nueva Vacante</a>
+		{{/if}}
+	</header>
+
+	<div class="contenido-principal contenedor">
+		{{> home }}
+	</div>
+
+	{{#if mensajes}}
+		<div class="alertas">
+			{{#mostrarAlertas mensajes}}
+			{{/mostrarAlertas}}
+		</div>
+	{{/if}}
+
+	<script type="text/javascript" src="/dist/bundle.js"></script>
+</body>
+</html>
